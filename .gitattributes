@@ -1,0 +1,93 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Python files
+*.py text eol=lf
+
+# Configuration files
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+
+# Documentation
+*.md text eol=lf
+*.txt text eol=lf
+*.rst text eol=lf
+
+# Scripts
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Web files
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.xml text eol=lf
+
+# Data files
+*.csv text eol=lf
+*.tsv text eol=lf
+
+# Binary files
+*.pdf binary
+*.xlsx binary
+*.xls binary
+*.doc binary
+*.docx binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.rar binary
+*.7z binary
+*.pkl binary
+*.joblib binary
+*.h5 binary
+*.onnx binary
+*.pem binary
+*.key binary
+*.crt binary
+*.p12 binary
+*.pfx binary
+
+# Images
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.ico binary
+*.svg text eol=lf
+
+# Fonts
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Archives
+*.tar.gz binary
+*.tgz binary
+*.tar.bz2 binary
+*.tbz2 binary
+
+# Model files
+*.model binary
+*.weights binary
+*.ckpt binary
+*.safetensors binary
+
+# Logs (usually text but can be large)
+*.log text eol=lf
+
+# Environment files
+.env* text eol=lf
+
+# Git files
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.gitkeep text eol=lf
