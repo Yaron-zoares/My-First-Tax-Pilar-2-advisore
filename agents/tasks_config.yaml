@@ -1,0 +1,118 @@
+# Task Configuration for Pillar Two Analysis
+# Task Configuration for Pillar Two Analysis
+
+tasks:
+  financial_analysis:
+    name: "Financial Analysis"
+    description: "Financial data analysis and ETR calculation"
+    agent: "tax_modeler"
+    priority: "high"
+    expected_duration: "30 minutes"
+    inputs:
+      - "financial_data"
+      - "tax_rates"
+      - "jurisdiction_info"
+    outputs:
+      - "etr_calculation"
+      - "topup_tax_analysis"
+      - "risk_assessment"
+    steps:
+      - "Reading financial data"
+      - "Calculating ETR"
+      - "Identifying supplementary tax exposure"
+      - "Creating analysis report"
+
+  legal_review:
+    name: "Legal Review"
+    description: "Checking compliance with Pillar Two rules"
+    agent: "legal_interpreter"
+    priority: "high"
+    expected_duration: "45 minutes"
+    inputs:
+      - "company_structure"
+      - "tax_treaties"
+      - "oecd_guidelines"
+    outputs:
+      - "legal_opinion"
+      - "compliance_report"
+      - "risk_mitigation"
+    steps:
+      - "Checking company structure"
+      - "Analyzing tax treaties"
+      - "Checking OECD compliance"
+      - "Creating recommendations"
+
+  xml_generation:
+    name: "XML Report Generation"
+    description: "Creating valid GIR XML report"
+    agent: "xml_reporter"
+    priority: "medium"
+    expected_duration: "20 minutes"
+    inputs:
+      - "financial_analysis"
+      - "legal_review"
+      - "company_details"
+    outputs:
+      - "gir_xml_file"
+      - "validation_report"
+      - "pdf_backup"
+    steps:
+      - "Creating XML Schema"
+      - "Filling data"
+      - "Validation checking"
+      - "Creating backup"
+
+  qa_analysis:
+    name: "Q&A Analysis"
+    description: "Analysis of user questions and answers"
+    agent: "tax_modeler"
+    priority: "low"
+    expected_duration: "15 minutes"
+    inputs:
+      - "user_questions"
+      - "financial_data"
+      - "legal_context"
+    outputs:
+      - "qa_report"
+      - "recommendations"
+    steps:
+      - "Question analysis"
+      - "Searching relevant information"
+      - "Creating answer"
+      - "Preparing recommendations"
+
+workflows:
+  standard_analysis:
+    name: "Standard Analysis"
+    description: "Basic analysis of financial data"
+    tasks:
+      - financial_analysis
+      - qa_analysis
+    sequence: "sequential"
+    estimated_duration: "45 minutes"
+
+  comprehensive_analysis:
+    name: "Comprehensive Analysis"
+    description: "Complete analysis with legal review and report generation"
+    tasks:
+      - financial_analysis
+      - legal_review
+      - xml_generation
+      - qa_analysis
+    sequence: "sequential"
+    estimated_duration: "110 minutes"
+
+  quick_review:
+    name: "Quick Review"
+    description: "Quick review of financial data"
+    tasks:
+      - financial_analysis
+    sequence: "single"
+    estimated_duration: "30 minutes"
+
+settings:
+  default_workflow: "standard_analysis"
+  enable_parallel_processing: false
+  max_concurrent_tasks: 2
+  timeout_minutes: 120
+  retry_attempts: 3

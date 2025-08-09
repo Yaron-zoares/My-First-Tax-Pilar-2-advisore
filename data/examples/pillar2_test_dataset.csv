@@ -1,0 +1,8 @@
+Jurisdiction,Entity ID,Business Segment,Activity Type,GloBE Income,Covered Taxes,ETR,Top-Up Tax,Qualified Status,Safe Harbour,Ultimate Parent,Adjustment Type,Adjustment Amount,Tax Section,Regulatory Status
+Germany,DE123,Cloud Services,Digital,1500000,225000,15%,0,Yes,Yes,GlobalCorp,None,0,,Active
+Brazil,BR456,Consulting,Professional,1200000,150000,12.5%,30000,No,No,GlobalCorp,Non-Deductible Expense,50000,32(8),Active
+Japan,JP789,AI Research,R&D,2000000,320000,16%,0,Yes,No,GlobalCorp,Depreciation,100000,21,Active
+Mexico,MX321,Logistics,Transport,1000000,100000,10%,50000,No,Yes,GlobalCorp,Private Expense,20000,32(11),Inactive
+Ireland,IE654,Fintech,Financial,800000,120000,15%,0,Yes,Yes,GlobalCorp,Representation Expense,15000,32(1),Active
+France,FR987,Manufacturing,Industrial,3000000,2500000,8.3%,200000,No,No,GlobalCorp,None,0,,Inactive
+Netherlands,NL741,Cloud Services,Digital,1800000,270000,15%,0,Yes,Yes,GlobalCorp,Temporary Timing Difference,40000,30,Active

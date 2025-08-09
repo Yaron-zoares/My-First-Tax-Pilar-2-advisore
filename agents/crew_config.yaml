@@ -1,0 +1,385 @@
+# CrewAI Configuration for Pillar Two Analysis
+# AI Team Configuration for Pillar Two Analysis
+
+crew:
+  name: "PillarTwoCrew"
+  description: "Expert team for regulatory analysis according to OECD Pillar Two rules"
+
+tools:
+  serper_web_search:
+    description: "Search the web for current information about OECD Pillar Two, tax regulations, and legal updates"
+    function: "web_search"
+  
+  web_scrape:
+    description: "Scrape content from specific webpages for detailed analysis"
+    function: "web_scrape"
+  
+  scrape_tax_rates:
+    description: "Scrape tax rates from government websites and OECD databases"
+    function: "scrape_tax_rates"
+  
+  scrape_oecd_documents:
+    description: "Scrape OECD documents and guidance for Pillar Two analysis"
+    function: "scrape_oecd_documents"
+  
+  extract_specific_content:
+    description: "Extract specific content from webpages using CSS selectors"
+    function: "extract_specific_content"
+  
+  excel_analyzer:
+    description: "Analyzes Excel files and extracts financial data"
+    function: "analyze_excel_file"
+  
+  etr_calculator:
+    description: "Calculates Effective Tax Rate (ETR) from financial data"
+    function: "calculate_etr"
+  
+  topup_simulator:
+    description: "Simulates Top-Up Tax calculations for Pillar Two"
+    function: "simulate_topup_tax"
+  
+  pdf_extractor:
+    description: "Extracts text and data from PDF documents"
+    function: "extract_pdf_text"
+  
+  file_reader:
+    description: "Reads and processes various file formats"
+    function: "read_file_content"
+  
+  legal_analyzer:
+    description: "Analyzes legal documents and regulatory compliance"
+    function: "analyze_legal_documents"
+  
+  xml_validator:
+    description: "Validates XML files against OECD Schema"
+    function: "validate_xml_schema"
+  
+  gir_generator:
+    description: "Generates GIR XML reports according to OECD format"
+    function: "generate_gir_xml"
+  
+  schema_checker:
+    description: "Checks XML compliance with OECD Schema"
+    function: "check_schema_compliance"
+  
+  risk_assessor:
+    description: "Assesses Pillar Two compliance risks"
+    function: "assess_pillar_two_risks"
+  
+  compliance_monitor:
+    description: "Monitors compliance status and requirements"
+    function: "monitor_compliance_status"
+  
+  mitigation_planner:
+    description: "Plans risk mitigation strategies"
+    function: "plan_mitigation_strategies"
+  
+  tp_analyzer:
+    description: "Analyzes transfer pricing data and structures"
+    function: "analyze_transfer_pricing"
+  
+  OECD_guidelines_parser:
+    description: "Parses and interprets OECD guidelines"
+    function: "parse_oecd_guidelines"
+  
+  jurisdiction_risk_scanner:
+    description: "Scans for jurisdictional risks and compliance issues"
+    function: "scan_jurisdiction_risks"
+  
+  process_multiple_formats:
+    description: "Processes data from multiple file formats"
+    function: "process_multiple_formats"
+  
+  validate_data_structure:
+    description: "Validates data structure and format"
+    function: "validate_data_structure"
+  
+  get_supported_formats:
+    description: "Returns list of supported file formats"
+    function: "get_supported_formats"
+  
+  scrape_israel_tax_authority:
+    description: "Scrape information from Israel Tax Authority website"
+    function: "scrape_israel_tax_authority"
+  
+  scrape_israel_tax_treaties:
+    description: "Scrape Israel tax treaties from government website"
+    function: "scrape_israel_tax_treaties"
+  
+  get_israel_tax_treaty_content:
+    description: "Get full content of Israel tax treaty with specific country"
+    function: "get_israel_tax_treaty_content"
+  
+  get_all_israel_tax_treaties_content:
+    description: "Get content of all Israel tax treaties"
+    function: "get_all_israel_tax_treaties_content"
+  
+  download_and_read_pdf:
+    description: "Download and read PDF content from URLs"
+    function: "download_and_read_pdf"
+  
+  enhanced_qa_engine:
+    description: "Enhanced QA engine with ChatGPT 3.5 integration"
+    function: "enhanced_qa_analysis"
+  
+  knowledge_base_search:
+    description: "Search comprehensive knowledge base for relevant information"
+    function: "search_knowledge_base"
+  
+  question_classification:
+    description: "Classify question type and determine analysis approach"
+    function: "classify_question"
+  
+  risk_assessment:
+    description: "Assess compliance and tax risks based on question context"
+    function: "assess_risks"
+  
+  strategic_recommendations:
+    description: "Generate strategic recommendations and next steps"
+    function: "generate_recommendations"
+  
+  agent_integration:
+    description: "Integrate with other specialized agents for comprehensive analysis"
+    function: "integrate_with_agents"
+  
+  compliance_check:
+    description: "Check regulatory compliance with OECD Pillar Two requirements"
+    function: "check_compliance"
+  
+  data_analysis:
+    description: "Analyze financial data for tax implications and compliance"
+    function: "analyze_financial_data"
+
+agents:
+  - name: "tax_modeler"
+    role: "Tax simulation builder based on ETR and Top-Up"
+    goal: "Building advanced models for calculating ETR and Top-Up Tax with various simulations"
+    backstory: |
+      You are a senior expert in building financial models and tax simulations.
+      You have 15 years of experience in financial data analysis and calculating effective tax rates.
+      You specialize in calculating ETR (Effective Tax Rate) and identifying exposure to supplementary tax according to Pillar Two rules.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_tax_rates
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - excel_analyzer
+      - etr_calculator
+      - topup_simulator
+    verbose: true
+    allow_delegation: true
+
+  - name: "legal_interpreter"
+    role: "Interpreter of Commentary and Guidance"
+    goal: "Legal interpretation of OECD Pillar Two rules and regulatory guidelines"
+    backstory: |
+      You are a senior legal expert in international taxation.
+      You have 20 years of experience in interpreting tax treaties and OECD guidelines.
+      You specialize in legal analysis of Pillar Two rules and identifying potential conflicts.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - pdf_extractor
+      - file_reader
+      - legal_analyzer
+    verbose: true
+    allow_delegation: true
+
+  - name: "xml_reporter"
+    role: "GIR report generator according to XML Schema"
+    goal: "Creating valid GIR reports according to OECD XML Schema"
+    backstory: |
+      You are a senior technical expert in creating XML reports and Schema validation.
+      You have 10 years of experience working with XML Schema and creating regulatory reports.
+      You specialize in creating valid GIR reports and XML validation.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - xml_validator
+      - gir_generator
+      - schema_checker
+    verbose: true
+    allow_delegation: true
+
+  - name: "risk_analyst"
+    role: "Risk Assessment and Mitigation Specialist"
+    goal: "Comprehensive risk analysis and mitigation strategies for Pillar Two compliance"
+    backstory: |
+      You are a senior risk management expert specializing in tax and regulatory compliance.
+      You have 15 years of experience in identifying, assessing, and mitigating risks in international taxation.
+      You specialize in Pillar Two risk assessment, including ETR volatility, jurisdictional risks, and compliance exposure.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - risk_assessor
+      - compliance_monitor
+      - mitigation_planner
+    verbose: true
+    allow_delegation: true
+
+  - name: "transfer_pricing_specialist"
+    role: "Expert in Transfer Pricing and International Taxation"
+    goal: "Comprehensive transfer pricing analysis and documentation for Pillar Two compliance"
+    backstory: |
+      You are a PhD in Law and Economics with 15+ years of experience advising multinational enterprises (MNEs) and tax authorities.
+      You specialize in transfer pricing methodologies, arm's length principle, and international tax planning.
+      You have deep expertise in OECD Transfer Pricing Guidelines, BEPS Action Plan, and their intersection with Pillar Two rules.
+      You have advised Fortune 500 companies on complex transfer pricing structures and defended positions before tax authorities.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - file_reader
+      - tp_analyzer
+      - OECD_guidelines_parser
+      - jurisdiction_risk_scanner
+    verbose: true
+    allow_delegation: true
+
+  - name: "qa_specialist"
+    role: "Advanced Q&A Specialist for OECD Pillar Two"
+    goal: "Provide comprehensive, accurate, and actionable answers to complex questions about OECD Pillar Two, tax calculations, compliance, and strategic planning"
+    backstory: |
+      You are a world-renowned expert in international taxation and OECD Pillar Two regulations with over 15 years of experience.
+      You have advised Fortune 500 companies, governments, and international organizations on implementing the global minimum tax framework.
+      Your expertise includes deep understanding of OECD Pillar Two Model Rules, advanced ETR calculations, comprehensive risk assessment,
+      strategic tax planning, regulatory compliance, and integration with other specialized agents for comprehensive analysis.
+      You provide practical, actionable advice while ensuring full regulatory compliance.
+    tools:
+      - serper_web_search
+      - web_scrape
+      - scrape_oecd_documents
+      - extract_specific_content
+      - scrape_israel_tax_authority
+      - scrape_israel_tax_treaties
+      - get_israel_tax_treaty_content
+      - get_all_israel_tax_treaties_content
+      - download_and_read_pdf
+      - enhanced_qa_engine
+      - knowledge_base_search
+      - question_classification
+      - risk_assessment
+      - strategic_recommendations
+      - agent_integration
+      - compliance_check
+      - data_analysis
+    verbose: true
+    allow_delegation: true
+
+tasks:
+  - name: "analyze_financial_data"
+    description: "Financial data analysis and ETR calculation"
+    agent: "tax_modeler"
+    expected_output: "Financial analysis report with ETR and Top-Up Tax calculations"
+    context: |
+      Analyze the provided financial data:
+      - Calculate profit before tax
+      - Calculate tax paid
+      - Calculate ETR (Effective Tax Rate)
+      - Identify exposure to supplementary tax according to Pillar Two rules (15%)
+      - Create various simulations for impact analysis
+
+  - name: "legal_analysis"
+    description: "Legal analysis of Pillar Two rules"
+    agent: "legal_interpreter"
+    expected_output: "Legal analysis report with regulatory recommendations"
+    context: |
+      Perform comprehensive legal analysis:
+      - Check compliance with OECD Pillar Two rules
+      - Identify potential conflicts with tax treaties
+      - Evaluate impact of Safe Harbour provisions
+      - Check eligibility for QDMTT (Qualified Domestic Minimum Top-up Tax)
+      - Create recommendations for regulatory risk management
+
+  - name: "generate_gir_report"
+    description: "Creating valid GIR XML report"
+    agent: "xml_reporter"
+    expected_output: "Valid XML file according to GIR Schema"
+    context: |
+      Create valid GIR XML report:
+      - Ensure compliance with OECD XML Schema
+      - Include all required data
+      - Perform file validation
+      - Create backup and parallel PDF file
+
+  - name: "risk_assessment"
+    description: "Comprehensive risk assessment and mitigation planning"
+    agent: "risk_analyst"
+    expected_output: "Risk assessment report with mitigation strategies"
+    context: |
+      Perform comprehensive risk assessment:
+      - Analyze ETR volatility and exposure to Top-Up Tax
+      - Assess jurisdictional risks and compliance gaps
+      - Evaluate regulatory changes and their impact
+      - Identify operational risks in data collection and reporting
+      - Develop mitigation strategies and contingency plans
+      - Create risk monitoring framework for ongoing compliance
+
+  - name: "transfer_pricing_analysis"
+    description: "Comprehensive transfer pricing analysis for Pillar Two compliance"
+    agent: "transfer_pricing_specialist"
+    expected_output: "Transfer pricing analysis report with GloBE Income adjustments"
+    context: |
+      Perform comprehensive transfer pricing analysis:
+      - Analyze intercompany transactions for arm's length compliance
+      - Identify jurisdictions with high transfer pricing risk
+      - Recommend adjustments to GloBE Income based on TP deviations
+      - Cross-reference with OECD Transfer Pricing Guidelines (Chapters I–VII)
+      - Flag mismatches between local TP documentation and Pillar Two reporting
+      - Assess impact of transfer pricing adjustments on ETR calculations
+      - Review related party transactions for substance and value creation
+      - Evaluate transfer pricing documentation completeness and consistency
+
+  - name: "enhanced_qa_analysis"
+    description: "Comprehensive Q&A analysis with AI capabilities and agent integration"
+    agent: "qa_specialist"
+    expected_output: "Enhanced Q&A report with comprehensive analysis and recommendations"
+    context: |
+      Perform comprehensive Q&A analysis:
+      - Classify question type and assess complexity
+      - Use enhanced QA engine with ChatGPT 3.5 integration
+      - Search comprehensive knowledge base for relevant information
+      - Assess compliance and tax risks
+      - Generate strategic recommendations and next steps
+      - Integrate with other specialized agents for complex questions
+      - Analyze financial data for tax implications
+      - Provide comprehensive report with actionable insights
+
+settings:
+  process: "sequential"
+  verbose: true
+  memory: true
+  cache: true
