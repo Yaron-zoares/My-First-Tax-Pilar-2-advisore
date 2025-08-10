@@ -16,6 +16,9 @@ A comprehensive AI-powered system for financial report analysis, tax calculation
 - **Smart Q&A**: AI-powered question answering system with CrewAI integration
 - **Multi-language Support**: Hebrew and English interface
 - **Real-time Analysis**: Live financial data analysis and insights
+- **Data Validation**: Advanced CSV and Excel file validation and fixing
+- **Guardrails Integration**: AI safety and content filtering
+- **Comprehensive Testing**: Full test suite with automated validation
 
 ## 🏗️ Architecture
 
@@ -50,7 +53,6 @@ A comprehensive AI-powered system for financial report analysis, tax calculation
 git clone https://github.com/yourusername/pilar2.git
 cd pilar2
 ```
-
 
 ### 2. Create Virtual Environment
 ```bash
@@ -113,6 +115,7 @@ streamlit run frontend/app.py
 - Navigate to "Upload Files" in the sidebar
 - Upload Excel, CSV, or PDF files
 - The system will automatically process and validate your data
+- Advanced data fixing for common CSV and Excel issues
 
 ### 3. Financial Analysis
 - Go to "Financial Analysis" to view processed data
@@ -166,6 +169,9 @@ python test_web_scraping_integration.py
 
 # Test enhanced Q&A system
 python test_enhanced_qa_system.py
+
+# Test guardrails integration
+python test_guardrails_integration.py
 ```
 
 ## 📁 Project Structure
@@ -177,17 +183,25 @@ Pilar2/
 │   ├── yaml_crew_loader.py
 │   ├── web_scraping_tools.py
 │   ├── qa_specialist_agent.py  # Enhanced Q&A agent
+│   ├── data_validator.py       # Data validation tools
+│   ├── enhanced_error_handler.py # Error handling
 │   └── ...
 ├── backend/               # FastAPI backend
 │   ├── main.py
 │   ├── routes/           # API endpoints
 │   ├── services/         # Business logic
+│   │   ├── csv_fixer.py  # CSV file fixing
+│   │   ├── excel_fixer.py # Excel file fixing
+│   │   ├── guardrails_service.py # AI safety
+│   │   └── ...
 │   └── utils/            # Utilities
 ├── frontend/             # Streamlit frontend
 │   ├── app.py
 │   ├── components/
 │   └── pages/
 ├── config/               # Configuration files
+│   ├── guardrails_config.yaml # AI safety config
+│   └── ...
 ├── data/                 # Data storage
 ├── reports/              # Generated reports
 ├── logs/                 # Application logs
@@ -200,6 +214,7 @@ Pilar2/
 - `.env` file is excluded from version control
 - CORS is configured for local development
 - File upload validation and sanitization
+- AI content filtering with guardrails integration
 
 ## 🐛 Troubleshooting
 
@@ -235,11 +250,17 @@ pip install -r requirements.txt --force-reinstall
 - Check internet connection
 - Verify URLs in `agents/web_scraping_tools.py`
 
+#### Data Validation Issues
+- Check file format and encoding
+- Ensure CSV files use proper delimiters
+- Verify Excel files are not corrupted
+
 ## 📚 Documentation
 
 - [Enhanced Q&A System Guide](README_ENHANCED_QA_SYSTEM.md)
 - [Serper Integration Guide](README_SERPER_INTEGRATION.md)
 - [Web Scraping Integration](README_WEB_SCRAPING_INTEGRATION.md)
+- [Guardrails Integration](README_GUARDRAILS_INTEGRATION.md)
 - [API Documentation](http://localhost:8000/docs)
 - [Agent Configuration](agents/README_ENHANCED_DATA_PROCESSING.md)
 
@@ -265,11 +286,13 @@ For support and questions:
 ## 🔄 Updates
 
 ### Recent Updates (Latest)
+- ✅ **Guardrails Integration**: AI safety and content filtering system
+- ✅ **Enhanced Data Validation**: Advanced CSV and Excel file fixing
+- ✅ **Improved Error Handling**: Better logging and validation
+- ✅ **Comprehensive Testing**: Full test suite with automated validation
 - ✅ **Enhanced Q&A System**: Advanced AI-powered question answering with CrewAI
 - ✅ **Fixed Validation Errors**: Resolved all agent creation and tool validation issues
 - ✅ **Updated Dependencies**: Compatible versions for Windows Python 3.13
-- ✅ **Improved Testing**: Comprehensive test suite with 100% pass rate
-- ✅ **Better Error Handling**: Enhanced logging and validation
 
 ### Previous Updates
 - ✅ Added Serper web search integration
@@ -278,9 +301,9 @@ For support and questions:
 - ✅ Added tax treaty analysis capabilities
 - ✅ Added PDF processing and reading
 - ✅ Enhanced multi-agent system
-- ✅ Improved error handling and logging
 
 ### Version History
+- **v2.2.0**: Guardrails integration and enhanced data validation
 - **v2.1.0**: Enhanced Q&A system with CrewAI integration
 - **v2.0.0**: Major update with AI agents and web integration
 - **v1.0.0**: Initial release with basic functionality
@@ -289,13 +312,32 @@ For support and questions:
 
 - **Enhanced Q&A System**: ✅ Fully Operational
 - **AI Agents**: ✅ All 6 agents working correctly
+- **Guardrails Integration**: ✅ AI safety system active
+- **Data Validation**: ✅ CSV and Excel fixing operational
 - **Dependencies**: ✅ All packages installed successfully
-- **Testing**: ✅ 6/6 tests passing
+- **Testing**: ✅ Comprehensive test suite passing
 - **Platform Support**: ✅ Windows, macOS, Linux
 - **Python Version**: ✅ 3.13+ (recommended), 3.8+ (minimum)
+
+## 🆕 New Features
+
+### Guardrails Integration
+- AI content filtering and safety
+- Configurable content policies
+- Real-time content validation
+
+### Enhanced Data Validation
+- Automatic CSV file fixing
+- Excel file corruption detection
+- Data format standardization
+
+### Improved Error Handling
+- Better logging and debugging
+- User-friendly error messages
+- Automated error recovery
 
 ---
 
 **Pilar2** - Empowering financial analysis with AI 🚀
 
-*Enhanced Q&A System powered by CrewAI and OpenAI*
+*Enhanced Q&A System powered by CrewAI and OpenAI with AI Safety Guardrails*
