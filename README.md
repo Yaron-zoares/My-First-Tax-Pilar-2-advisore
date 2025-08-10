@@ -51,6 +51,7 @@ git clone https://github.com/yourusername/pilar2.git
 cd pilar2
 ```
 
+
 ### 2. Create Virtual Environment
 ```bash
 python -m venv venv

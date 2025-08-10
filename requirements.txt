@@ -13,7 +13,12 @@ crewai>=0.150.0
 langchain>=0.1.0
 langchain-openai>=0.1.0
 
+# Guardrails Integration
+guardrails-ai>=0.3.0
+pydantic>=2.0.0
+jsonschema>=4.23.0
+marshmallow>=3.21.0
+
 # Utilities
 python-dotenv>=1.0.0
 requests>=2.25.0
-pydantic>=2.0.0
