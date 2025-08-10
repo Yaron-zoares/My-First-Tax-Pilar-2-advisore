@@ -10,9 +10,9 @@ numpy==1.26.4
 openpyxl==3.1.2
 
 # AI and LLM - Compatible versions
-openai==1.58.0
+openai>=1.86.0,<2.0.0
 langchain==0.3.27
-langchain-openai==0.3.29
+langchain-openai>=0.3.29,<0.4.0
 
 # CrewAI - Latest stable version
 crewai==0.157.0
@@ -37,9 +37,10 @@ reportlab==4.1.0
 PyPDF2==3.0.1
 python-docx==1.1.0
 
-# XML Processing
-lxml==5.2.0
+# XML Processing - Using more compatible alternatives
+# lxml==5.2.0  # Removed due to build issues on Streamlit Cloud
 xmltodict==0.13.0
+defusedxml>=0.7.1,<0.8.0
 
 # Utilities
 python-dotenv==1.0.1

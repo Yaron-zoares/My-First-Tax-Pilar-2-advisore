@@ -1,25 +1,17 @@
 # Changelog
 
-All notable changes to Pilar2 will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Added
-- New features and improvements
-
-### Changed
-- Changes in existing functionality
-
-### Deprecated
-- Features that will be removed in upcoming releases
-
-### Removed
-- Features that have been removed
-
 ### Fixed
+- **Streamlit Cloud Compatibility**: Fixed dependency conflicts and build issues
+  - Updated OpenAI version from 1.58.0 to >=1.86.0 for langchain-openai compatibility
+  - Removed lxml dependency causing build failures on Streamlit Cloud
+  - Added defusedxml as XML processing alternative
+  - Updated all dependency files (requirements.txt, requirements.in, pyproject.toml)
+  - Created optimized requirements-streamlit.txt for Streamlit Cloud
+  - Added .streamlit/config.toml for deployment optimization
 - **Dependencies Issue**: Resolved serper-dev package installation error
   - Removed non-existent serper-dev package from requirements
   - Updated all dependency files (requirements.txt, requirements.in, pyproject.toml)
@@ -27,7 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed "No matching distribution found for serper-dev" error
 
 ### Security
-- Security-related changes
+- Enhanced dependency security with version pinning
+- Removed deprecated packages causing security warnings
+
+## [Previous Entries]
 
 ## [2.1.0] - 2025-08-10
 

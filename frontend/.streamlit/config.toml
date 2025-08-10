@@ -1,0 +1,26 @@
+[server]
+# Optimize for Streamlit Cloud
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+# Optimize browser settings
+gatherUsageStats = false
+
+[theme]
+# Custom theme for better appearance
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f2f6"
+textColor = "#262730"
+
+[global]
+# Global settings
+developmentMode = false
+showErrorDetails = false
+
+[runner]
+# Optimize runner settings
+magicEnabled = false
+installTracer = false

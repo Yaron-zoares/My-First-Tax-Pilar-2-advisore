@@ -1,36 +1,55 @@
-# Pilar2 Streamlit Cloud Dependencies - Minimal Version
-# This file is specifically for Streamlit Cloud deployment
+# Pilar2 Dependencies - Streamlit Cloud Optimized
+# Core dependencies
+fastapi>=0.115.0,<0.116.0
+uvicorn[standard]>=0.32.0,<0.33.0
+streamlit>=1.36.0,<1.37.0
 
-# Core Streamlit dependencies
-streamlit==1.36.0
-
-# Data processing - Essential
-pandas==2.2.3
-numpy==1.26.4
-openpyxl==3.1.2
+# Data processing - Streamlit Cloud compatible
+pandas>=2.2.0,<2.3.0
+numpy>=1.26.0,<1.27.0
+openpyxl>=3.1.0,<3.2.0
 
 # Visualization
-plotly==5.17.0
+plotly>=5.17.0,<5.18.0
 
-# Core dependencies
-pydantic==2.10.4
-pydantic-settings==2.3.0
-python-dotenv==1.0.1
+# AI and LLM - Compatible versions for Streamlit Cloud
+openai>=1.86.0,<2.0.0
+langchain>=0.3.27,<0.4.0
+langchain-openai>=0.3.29,<0.4.0
+crewai>=0.157.0,<0.158.0
 
-# HTTP & API
-requests==2.32.3
-python-multipart==0.0.20
+# Guardrails Integration
+guardrails-ai>=0.6.6,<0.7.0
+pydantic>=2.10.0,<2.11.0
+jsonschema>=4.23.0,<4.24.0
+marshmallow>=3.21.0,<3.22.0
 
-# File Processing - Essential
-aiofiles==24.1.0
+# Web Search Integration
+# Note: Serper is used as an API service, not as a Python package
 
-# Compatibility
-typing-extensions==4.12.2
+# Web Scraping Integration - Streamlit Cloud compatible
+beautifulsoup4>=4.12.0,<4.13.0
+selenium>=4.20.0,<4.21.0
+webdriver-manager>=4.0.0,<4.1.0
 
-# AI Integration - Basic (without conflicting packages)
-openai==1.58.0
-langchain==0.3.27
-langchain-openai==0.3.29
+# PDF and Document Processing
+reportlab>=4.1.0,<4.2.0
+PyPDF2>=3.0.0,<3.1.0
+python-docx>=1.1.0,<1.2.0
 
-# Note: CrewAI and Guardrails are excluded for Streamlit Cloud compatibility
-# These can be added later once dependency conflicts are resolved
+# XML Processing - Streamlit Cloud compatible alternatives
+# lxml removed due to build issues on Streamlit Cloud
+xmltodict>=0.13.0,<0.14.0
+defusedxml>=0.7.1,<0.8.0
+
+# Utilities
+python-dotenv>=1.0.0,<1.1.0
+requests>=2.32.0,<2.33.0
+python-multipart>=0.0.20,<0.1.0
+aiofiles>=24.1.0,<24.2.0
+typing-extensions>=4.12.0,<4.13.0
+pydantic-settings>=2.3.0,<2.4.0
+
+# Testing and Development
+pytest>=8.2.0,<8.3.0
+pytest-asyncio>=0.24.0,<0.25.0
