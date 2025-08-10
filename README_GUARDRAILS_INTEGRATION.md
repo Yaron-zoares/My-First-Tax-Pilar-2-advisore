@@ -4,6 +4,14 @@
 
 This document describes the integration of **Guardrails** into the Pilar2 system to provide AI response validation, quality control, and compliance monitoring. **All validation errors have been resolved and the system is fully operational with CrewAI integration.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All Guardrails functionality remains fully operational
+
 ## What is Guardrails?
 
 Guardrails is a framework that helps ensure AI responses meet specific quality standards, compliance requirements, and safety guidelines. In Pilar2, it's used to:

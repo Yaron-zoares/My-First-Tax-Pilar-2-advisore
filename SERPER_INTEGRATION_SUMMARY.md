@@ -7,8 +7,9 @@ Successfully integrated **Serper web search capabilities** into all Pilar2 agent
 
 ### 1. Dependencies Added
 - **File**: `requirements.txt`
-- **Added**: `serper-dev>=0.1.0`
-- **Purpose**: Web search API integration
+- **Added**: `# Note: Serper is used as an API service, not as a Python package`
+- **Purpose**: Web search API integration (no Python package needed)
+- **Note**: Serper integration works via HTTP requests, no additional packages required
 
 ### 2. Environment Configuration
 - **File**: `config/settings.py`
@@ -249,3 +250,15 @@ The integration maintains the existing functionality while significantly expandi
 
 **Status**: ✅ **COMPLETED**  
 **All agents now include Serper web search capabilities**
+
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution (Latest)
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Files Updated**: 
+  - `requirements.txt`
+  - `requirements.in` 
+  - `pyproject.toml`
+- **Result**: Clean installation without errors
+- **Note**: Serper functionality remains fully operational via HTTP API

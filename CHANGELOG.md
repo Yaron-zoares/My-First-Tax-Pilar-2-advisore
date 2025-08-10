@@ -20,7 +20,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Features that have been removed
 
 ### Fixed
-- Bug fixes
+- **Dependencies Issue**: Resolved serper-dev package installation error
+  - Removed non-existent serper-dev package from requirements
+  - Updated all dependency files (requirements.txt, requirements.in, pyproject.toml)
+  - Added explanatory comments about Serper API service usage
+  - Fixed "No matching distribution found for serper-dev" error
 
 ### Security
 - Security-related changes

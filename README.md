@@ -265,6 +265,12 @@ taskkill /F /IM python.exe
 pip install -r requirements.txt --force-reinstall
 ```
 
+#### Package Installation Errors
+If you encounter errors like "No matching distribution found for serper-dev":
+- This is now fixed! The serper-dev package was removed as it's not needed
+- Serper is used as an API service, not as a Python package
+- Simply run: `pip install -r requirements.txt`
+
 #### Enhanced Q&A System Issues
 - Ensure OpenAI API key is properly configured
 - Check CrewAI configuration in `agents/crew_config.yaml`
@@ -311,6 +317,7 @@ For support and questions:
 ## 🔄 Updates
 
 ### Recent Updates (Latest)
+- ✅ **Fixed Dependencies Issue**: Resolved serper-dev package installation error
 - ✅ **Guardrails Integration**: AI safety and content filtering system
 - ✅ **Enhanced Data Validation**: Advanced CSV and Excel file fixing
 - ✅ **Improved Error Handling**: Better logging and validation

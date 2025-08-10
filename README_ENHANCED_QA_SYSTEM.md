@@ -4,6 +4,14 @@
 
 The Enhanced Q&A System is a state-of-the-art AI-powered question answering system specifically designed for OECD Pillar Two analysis, tax regulations, and financial compliance. Built with CrewAI and OpenAI, it provides comprehensive, accurate, and actionable insights.
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All functionality remains fully operational
+
 ## 🚀 Features
 
 ### Core Q&A Capabilities

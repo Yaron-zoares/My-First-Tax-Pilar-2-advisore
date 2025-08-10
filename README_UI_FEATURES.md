@@ -4,6 +4,14 @@
 
 The Pilar2 system now features a **completely enhanced user interface** with advanced AI capabilities powered by ChatGPT 3.5 and CrewAI integration. This upgrade transforms the basic Q&A system into a comprehensive AI-powered financial analysis platform. **All validation errors have been resolved and the system is fully operational.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All UI features remain fully operational
+
 ## 🤖 New AI-Powered Features
 
 ### 1. Enhanced Q&A with ChatGPT 3.5

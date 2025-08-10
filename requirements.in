@@ -34,7 +34,7 @@ jsonschema>=4.23.0,<4.24.0
 marshmallow>=3.21.0,<3.22.0
 
 # Web Search Integration
-serper-dev>=0.1.0,<0.2.0
+# Note: Serper is used as an API service, not as a Python package
 
 # Web Scraping Integration
 beautifulsoup4>=4.12.0,<4.13.0

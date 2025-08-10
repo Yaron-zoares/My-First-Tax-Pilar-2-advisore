@@ -3,6 +3,14 @@
 ## 🎯 Overview
 The Pilar2 system now supports comprehensive AI model management, allowing users to switch between different ChatGPT versions and configure AI settings through an intuitive interface. **All validation errors have been resolved and the system is fully operational with CrewAI integration.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All AI model management functionality remains fully operational
+
 ## 🚀 Key Features
 
 ### 1. Multiple ChatGPT Model Support

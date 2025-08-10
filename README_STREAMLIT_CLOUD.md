@@ -4,6 +4,14 @@
 
 This guide explains how to deploy the Pilar2 Financial Report Analysis System to Streamlit Cloud, resolving dependency conflicts and ensuring smooth deployment.
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All deployment functionality remains fully operational
+
 ## ⚠️ Known Issues & Solutions
 
 ### 1. Dependency Conflicts

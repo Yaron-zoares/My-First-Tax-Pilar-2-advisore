@@ -3,6 +3,14 @@
 ## Overview
 This document describes the AI agents configuration for OECD Pillar Two compliance analysis using YAML-based CrewAI setup. **All validation errors have been resolved and the system is fully operational with CrewAI integration.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All AI agents functionality remains fully operational
+
 ## Agent Team Structure
 
 ### 1. Tax Modeler Agent

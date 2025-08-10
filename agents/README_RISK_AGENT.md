@@ -3,6 +3,14 @@
 ## Overview
 The Risk Assessment Agent is a specialized AI agent designed to provide comprehensive risk analysis and mitigation strategies for OECD Pillar Two compliance. **All validation errors have been resolved and the system is fully operational with CrewAI integration.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All risk assessment functionality remains fully operational
+
 ## Capabilities
 
 ### 1. Risk Assessment (`_assess_pillar_two_risks`)

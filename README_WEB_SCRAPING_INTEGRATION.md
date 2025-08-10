@@ -3,6 +3,14 @@
 ## Overview
 All Pilar2 agents now include **advanced web scraping capabilities** to extract real-time data from websites, government databases, and regulatory sources for comprehensive OECD Pillar Two analysis. **All validation errors have been resolved and the system is fully operational with CrewAI integration.**
 
+## 🔧 Recent Fixes
+
+### Dependencies Issue Resolution ✅
+- **Problem**: `serper-dev` package caused installation errors
+- **Solution**: Removed non-existent package from all dependency files
+- **Result**: Clean installation without errors
+- **Note**: All web scraping functionality remains fully operational
+
 ## 🚀 New Capabilities
 
 ### Web Scraping Tools
