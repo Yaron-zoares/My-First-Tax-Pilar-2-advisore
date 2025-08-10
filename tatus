@@ -1,0 +1,4 @@
+[33m9f8aab3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update README and requirements, add enhanced QA system
+[33mc8ed6c1[m Initial commit: Pilar2 project with enhanced QA system and all fixes
+[33mdd3f152[m chore: Add .gitattributes for proper file handling
+[33md7bff7f[m feat: Initial release of Pilar2 v2.0.0 - Comprehensive AI-powered financial analysis system
