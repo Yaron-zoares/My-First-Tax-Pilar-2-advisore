@@ -50,8 +50,8 @@ A comprehensive AI-powered system for financial report analysis, tax calculation
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/pilar2.git
-cd pilar2
+git clone https://github.com/Yaron-zoares/My-First-Tax-Pilar-2-advisore.git
+cd My-First-Tax-Pilar-2-advisore
 ```
 
 ### 2. Create Virtual Environment
@@ -102,6 +102,31 @@ streamlit run frontend/app.py
 ### Access the Application
 - **Frontend**: http://localhost:8501
 - **API Docs**: http://localhost:8000/docs
+
+## ☁️ Streamlit Cloud Deployment
+
+For cloud deployment without backend dependencies, use the Streamlit Cloud version:
+
+### Quick Deploy to Streamlit Cloud
+1. **Use Streamlit Requirements**:
+   ```bash
+   cp requirements-streamlit.txt requirements.txt
+   ```
+
+2. **Deploy to Streamlit Cloud**:
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Connect your repository
+   - Set main file: `frontend/app.py`
+   - Deploy!
+
+### Streamlit Cloud Features
+- ✅ **Basic UI**: Full Streamlit interface
+- ✅ **Data Display**: View and analyze data
+- ✅ **Visualizations**: Plotly charts
+- ⚠️ **Limited Backend**: No FastAPI backend
+- ⚠️ **No AI Agents**: CrewAI not available
+
+📖 **Full deployment guide**: [README_STREAMLIT_CLOUD.md](README_STREAMLIT_CLOUD.md)
 
 ## 📊 Usage
 

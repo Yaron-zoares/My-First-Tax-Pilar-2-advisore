@@ -1,0 +1,36 @@
+# Pilar2 Streamlit Cloud Dependencies - Minimal Version
+# This file is specifically for Streamlit Cloud deployment
+
+# Core Streamlit dependencies
+streamlit==1.36.0
+
+# Data processing - Essential
+pandas==2.2.3
+numpy==1.26.4
+openpyxl==3.1.2
+
+# Visualization
+plotly==5.17.0
+
+# Core dependencies
+pydantic==2.10.4
+pydantic-settings==2.3.0
+python-dotenv==1.0.1
+
+# HTTP & API
+requests==2.32.3
+python-multipart==0.0.20
+
+# File Processing - Essential
+aiofiles==24.1.0
+
+# Compatibility
+typing-extensions==4.12.2
+
+# AI Integration - Basic (without conflicting packages)
+openai==1.58.0
+langchain==0.3.27
+langchain-openai==0.3.29
+
+# Note: CrewAI and Guardrails are excluded for Streamlit Cloud compatibility
+# These can be added later once dependency conflicts are resolved

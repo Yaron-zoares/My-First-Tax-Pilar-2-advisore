@@ -11,6 +11,7 @@ from pathlib import Path
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
+import os
 
 # Page configuration
 st.set_page_config(
@@ -61,7 +62,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # API Configuration
-API_BASE_URL = "http://localhost:8000/api/v1"
+# For local development: http://localhost:8000/api/v1
+# For Streamlit Cloud: Use environment variable or default to localhost
+import os
+
+# Try to get API URL from environment variable, fallback to localhost
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000/api/v1")
+
+# Check if running on Streamlit Cloud
+IS_STREAMLIT_CLOUD = os.getenv("STREAMLIT_CLOUD", "false").lower() == "true"
+
+if IS_STREAMLIT_CLOUD:
+    # For Streamlit Cloud, we'll use relative URLs or a different approach
+    API_BASE_URL = "/api/v1"  # This will be handled differently in the app
 
 def main():
     """Main application function"""

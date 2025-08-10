@@ -1,24 +1,53 @@
+# Pilar2 Dependencies - Streamlit Cloud Compatible
 # Core dependencies
-fastapi>=0.100.0
-uvicorn[standard]>=0.20.0
-streamlit>=1.25.0
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+streamlit==1.36.0
 
 # Data processing
-pandas>=2.0.0
-numpy>=1.24.0
+pandas==2.2.3
+numpy==1.26.4
+openpyxl==3.1.2
 
-# AI and LLM
-openai>=1.0.0
-crewai>=0.150.0
-langchain>=0.1.0
-langchain-openai>=0.1.0
+# AI and LLM - Compatible versions
+openai==1.58.0
+langchain==0.3.27
+langchain-openai==0.3.29
 
-# Guardrails Integration
-guardrails-ai>=0.3.0
-pydantic>=2.0.0
-jsonschema>=4.23.0
-marshmallow>=3.21.0
+# CrewAI - Latest stable version
+crewai==0.157.0
+
+# Guardrails Integration - Compatible version
+guardrails-ai==0.6.6
+pydantic==2.10.4
+jsonschema==4.25.0
+marshmallow==4.0.0
+
+# Web Search Integration
+serper-dev==0.1.0
+
+# Web Scraping Integration
+beautifulsoup4==4.12.2
+selenium==4.20.0
+webdriver-manager==4.0.1
+
+# PDF and Document Processing
+reportlab==4.1.0
+PyPDF2==3.0.1
+python-docx==1.1.0
+
+# XML Processing
+lxml==5.2.0
+xmltodict==0.13.0
 
 # Utilities
-python-dotenv>=1.0.0
-requests>=2.25.0
+python-dotenv==1.0.1
+requests==2.32.3
+python-multipart==0.0.20
+aiofiles==24.1.0
+typing-extensions==4.12.2
+pydantic-settings==2.3.0
+
+# Testing and Development
+pytest==8.2.0
+pytest-asyncio==0.24.0
