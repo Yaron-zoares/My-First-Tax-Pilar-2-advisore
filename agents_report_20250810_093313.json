@@ -1,0 +1,298 @@
+{
+  "overview": {
+    "timestamp": "2025-08-10T09:33:13.221722",
+    "total_agents": 11,
+    "agents_by_category": {
+      "main_agent": {
+        "name": "PillarTwoMaster",
+        "role": "OECD Pillar Two Tax Expert",
+        "status": "configured",
+        "tools_count": 16,
+        "team_members": 5,
+        "capabilities": [
+          "ETR calculations",
+          "Tax adjustments analysis",
+          "GIR XML generation",
+          "Safe Harbour checking",
+          "Country-by-country analysis",
+          "Regulatory compliance checking",
+          "Tax treaty analysis",
+          "SBIE calculations",
+          "QDMTT analysis",
+          "IIR/UTPR analysis",
+          "Risk assessment",
+          "Compliance monitoring",
+          "Mitigation planning",
+          "Transfer pricing analysis",
+          "OECD guidelines parsing",
+          "Jurisdiction risk scanning"
+        ]
+      },
+      "team_members": {
+        "count": 5,
+        "members": [
+          {
+            "name": "Financial Data Analyst",
+            "role": "Analyze financial statements and extract relevant data",
+            "specialization": "Financial statement analysis and accounting standards"
+          },
+          {
+            "name": "Legal Compliance Specialist",
+            "role": "Ensure legal compliance across jurisdictions",
+            "specialization": "International tax law and regulatory compliance"
+          },
+          {
+            "name": "Technical Implementation Expert",
+            "role": "Provide practical implementation guidance",
+            "specialization": "Tax systems and processes implementation"
+          },
+          {
+            "name": "Risk Assessment Specialist",
+            "role": "Identify and assess implementation risks",
+            "specialization": "Tax risk assessment and mitigation strategies"
+          },
+          {
+            "name": "Transfer Pricing Specialist",
+            "role": "Analyze transfer pricing implications",
+            "specialization": "Transfer pricing and international taxation"
+          }
+        ]
+      },
+      "yaml_agents": {
+        "count": 5,
+        "agents": [
+          {
+            "name": "tax_modeler",
+            "role": "Tax simulation builder based on ETR and Top-Up",
+            "goal": "Building advanced models for calculating ETR and Top-Up Tax",
+            "tools": [
+              "excel_analyzer",
+              "etr_calculator",
+              "topup_simulator"
+            ]
+          },
+          {
+            "name": "legal_interpreter",
+            "role": "Interpreter of Commentary and Guidance",
+            "goal": "Legal interpretation of OECD Pillar Two rules",
+            "tools": [
+              "pdf_extractor",
+              "file_reader",
+              "legal_analyzer"
+            ]
+          },
+          {
+            "name": "xml_reporter",
+            "role": "GIR report generator according to XML Schema",
+            "goal": "Creating valid GIR reports according to OECD XML Schema",
+            "tools": [
+              "xml_validator",
+              "gir_generator",
+              "schema_checker"
+            ]
+          },
+          {
+            "name": "risk_analyst",
+            "role": "Risk Assessment and Mitigation Specialist",
+            "goal": "Comprehensive risk analysis and mitigation strategies",
+            "tools": [
+              "risk_assessor",
+              "compliance_monitor",
+              "mitigation_planner"
+            ]
+          },
+          {
+            "name": "transfer_pricing_specialist",
+            "role": "Transfer Pricing Analysis Specialist",
+            "goal": "Comprehensive transfer pricing analysis for Pillar Two compliance",
+            "tools": [
+              "transfer_pricing_analyzer",
+              "oecd_guidelines_parser",
+              "jurisdiction_risk_scanner"
+            ]
+          }
+        ]
+      }
+    },
+    "system_status": "operational",
+    "available_workflows": [
+      "financial_analysis",
+      "legal_review",
+      "xml_generation",
+      "risk_assessment",
+      "transfer_pricing_analysis"
+    ]
+  },
+  "tools": {
+    "timestamp": "2025-08-10T09:33:13.221722",
+    "total_tools": 16,
+    "tools_by_category": {
+      "financial_analysis": {
+        "count": 4,
+        "tools": [
+          {
+            "name": "ETR_Calculator",
+            "description": "Calculate Effective Tax Rate (ETR) based on financial data",
+            "category": "financial_analysis",
+            "status": "active"
+          },
+          {
+            "name": "Tax_Adjustment_Analyzer",
+            "description": "Analyze and categorize tax adjustments for Pillar Two compliance",
+            "category": "financial_analysis",
+            "status": "active"
+          },
+          {
+            "name": "SBIE_Calculator",
+            "description": "Calculate Substance-based income exclusion (SBIE) for qualifying activities",
+            "category": "financial_analysis",
+            "status": "active"
+          },
+          {
+            "name": "QDMTT_Analyzer",
+            "description": "Analyze Qualified Domestic Minimum Top-up Tax (QDMTT) implications",
+            "category": "financial_analysis",
+            "status": "active"
+          }
+        ]
+      },
+      "compliance": {
+        "count": 3,
+        "tools": [
+          {
+            "name": "Safe_Harbour_Checker",
+            "description": "Check if company qualifies for Safe Harbours under Pillar Two rules",
+            "category": "compliance",
+            "status": "active"
+          },
+          {
+            "name": "Regulatory_Compliance_Checker",
+            "description": "Check regulatory compliance with Pillar Two requirements across jurisdictions",
+            "category": "compliance",
+            "status": "active"
+          },
+          {
+            "name": "Compliance_Monitor",
+            "description": "Monitor and track compliance status across jurisdictions",
+            "category": "compliance",
+            "status": "active"
+          }
+        ]
+      },
+      "reporting": {
+        "count": 2,
+        "tools": [
+          {
+            "name": "GIR_XML_Generator",
+            "description": "Generate Global Information Return (GIR) XML files according to OECD schema",
+            "category": "reporting",
+            "status": "active"
+          },
+          {
+            "name": "Country_By_Country_Analyzer",
+            "description": "Analyze country-by-country reporting data for Pillar Two implications",
+            "category": "reporting",
+            "status": "active"
+          }
+        ]
+      },
+      "risk_assessment": {
+        "count": 2,
+        "tools": [
+          {
+            "name": "Risk_Assessor",
+            "description": "Assess comprehensive Pillar Two compliance risks and exposure",
+            "category": "risk_assessment",
+            "status": "active"
+          },
+          {
+            "name": "Mitigation_Planner",
+            "description": "Plan and recommend risk mitigation strategies",
+            "category": "risk_assessment",
+            "status": "active"
+          }
+        ]
+      },
+      "transfer_pricing": {
+        "count": 3,
+        "tools": [
+          {
+            "name": "Transfer_Pricing_Analyzer",
+            "description": "Analyze transfer pricing structures and arm's length compliance",
+            "category": "transfer_pricing",
+            "status": "active"
+          },
+          {
+            "name": "OECD_Guidelines_Parser",
+            "description": "Parse and interpret OECD Transfer Pricing Guidelines",
+            "category": "transfer_pricing",
+            "status": "active"
+          },
+          {
+            "name": "Jurisdiction_Risk_Scanner",
+            "description": "Scan jurisdictions for transfer pricing and compliance risks",
+            "category": "transfer_pricing",
+            "status": "active"
+          }
+        ]
+      },
+      "legal_analysis": {
+        "count": 2,
+        "tools": [
+          {
+            "name": "Tax_Treaty_Analyzer",
+            "description": "Analyze impact of tax treaties on Pillar Two calculations",
+            "category": "legal_analysis",
+            "status": "active"
+          },
+          {
+            "name": "IIR_UTPR_Analyzer",
+            "description": "Analyze Income Inclusion Rule (IIR) and Undertaxed Profits Rule (UTPR)",
+            "category": "legal_analysis",
+            "status": "active"
+          }
+        ]
+      }
+    },
+    "tool_details": {}
+  },
+  "status": {
+    "timestamp": "2025-08-10T09:33:13.221722",
+    "system_health": "operational",
+    "components": {
+      "report_directory_pdf": {
+        "status": "operational",
+        "exists": true,
+        "files_count": 4
+      },
+      "report_directory_xml": {
+        "status": "operational",
+        "exists": true,
+        "files_count": 1
+      },
+      "report_directory_word": {
+        "status": "operational",
+        "exists": true,
+        "files_count": 1
+      },
+      "agent_file_pillar_two_master.py": {
+        "status": "operational",
+        "exists": true
+      },
+      "agent_file_report_generator.py": {
+        "status": "operational",
+        "exists": true
+      },
+      "agent_file_crew_config.yaml": {
+        "status": "operational",
+        "exists": true
+      },
+      "agent_file_tasks_config.yaml": {
+        "status": "operational",
+        "exists": true
+      }
+    },
+    "performance_metrics": {},
+    "recent_activities": []
+  }
+}

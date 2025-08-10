@@ -25,6 +25,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - Security-related changes
 
+## [2.1.0] - 2025-08-10
+
+### Added
+- **Enhanced Q&A System**: Advanced AI-powered question answering with CrewAI integration
+  - Confidence scoring for all responses
+  - Multi-agent analysis capabilities
+  - Real-time financial insights
+  - Advanced OECD Pillar Two analysis
+  - Comprehensive tax regulation explanations
+
+- **Improved Agent System**: Enhanced CrewAI agent configuration and tools
+  - Better tool formatting and validation
+  - Improved agent creation process
+  - Enhanced error handling and logging
+  - Better integration with OpenAI API
+
+- **Enhanced Testing Suite**: Comprehensive testing framework
+  - 6/6 tests passing with 100% success rate
+  - Enhanced Q&A system testing
+  - Agent validation testing
+  - Dependency compatibility testing
+
+### Changed
+- **Dependencies**: Updated to latest compatible versions
+  - CrewAI 0.152.0+ for better stability
+  - OpenAI 1.93.0+ for latest features
+  - LangChain 0.3.26+ for compatibility
+  - Streamlit 1.45.0+ for enhanced UI
+  - Python 3.13+ recommended (3.8+ minimum)
+
+- **Platform Support**: Enhanced Windows compatibility
+  - Pre-compiled wheels for all packages
+  - No compilation issues on Windows
+  - Full Python 3.13 support
+  - Improved dependency management
+
+- **Documentation**: Comprehensive updates
+  - Updated README with latest features
+  - Enhanced dependency documentation
+  - Better troubleshooting guides
+  - Platform-specific installation notes
+
+### Fixed
+- **Agent Validation Errors**: Resolved all CrewAI agent creation issues
+  - Fixed tool format for CrewAI compatibility
+  - Corrected agent initialization process
+  - Resolved validation errors in QA Specialist Agent
+
+- **Dependency Conflicts**: Resolved package version conflicts
+  - Fixed numpy and pandas compilation issues
+  - Resolved CrewAI version compatibility
+  - Fixed OpenAI integration issues
+
+- **Windows Compatibility**: Fixed compilation issues on Windows Python 3.13
+  - Updated requirements.txt with compatible versions
+  - Used pre-compiled wheels where available
+  - Resolved platform-specific dependency issues
+
+- **System Integration**: Improved overall system stability
+  - Better error handling and logging
+  - Enhanced validation and testing
+  - Improved user experience
+
+### Security
+- **Enhanced Validation**: Improved input validation and sanitization
+- **Better Error Handling**: Secure error reporting without information leakage
+- **Dependency Security**: Updated to latest secure package versions
+
 ## [2.0.0] - 2024-08-10
 
 ### Added

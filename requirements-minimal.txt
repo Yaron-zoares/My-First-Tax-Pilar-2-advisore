@@ -1,0 +1,25 @@
+# Pilar2 Minimal Dependencies - Core functionality only
+
+# Web Framework - Essential
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+
+# Data Processing - Essential
+pandas==2.2.3
+numpy==1.26.4
+openpyxl==3.1.2
+
+# Core Dependencies
+pydantic==2.10.4
+pydantic-settings==2.3.0
+python-dotenv==1.0.1
+
+# HTTP & API
+requests==2.32.3
+python-multipart==0.0.20
+
+# File Processing - Essential
+aiofiles==24.1.0
+
+# Compatibility
+typing-extensions==4.12.2

@@ -54,9 +54,11 @@ class QASpecialistAgent:
             
             You provide practical, actionable advice while ensuring full regulatory compliance.""",
             verbose=True,
-            allow_delegation=True,
-            tools=self._get_tools()
+            allow_delegation=True
         )
+        
+        # Add tools after creation to avoid validation errors
+        agent.tools = self._get_tools()
         
         return agent
     

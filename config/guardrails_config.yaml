@@ -1,0 +1,125 @@
+# Guardrails Configuration for Pilar2
+# This file contains configuration settings for AI response validation
+
+# Quality Control Settings
+quality_control:
+  # Minimum quality score threshold (0.0 - 1.0)
+  min_threshold: 0.8
+  
+  # Maximum response length for validation
+  max_response_length: 2000
+  
+  # Enable/disable quality improvement
+  enable_improvement: true
+  
+  # Quality scoring weights
+  scoring_weights:
+    length: 0.2
+    professional_terms: 0.2
+    structure: 0.1
+    sources: 0.1
+    base_score: 0.5
+
+# Pillar Two Specific Validation
+pillar_two_validation:
+  # Enable Pillar Two specific validation
+  enabled: true
+  
+  # Valid compliance statuses
+  valid_compliance_statuses:
+    - compliant
+    - non_compliant
+    - requires_review
+    - unknown
+  
+  # Valid risk levels
+  valid_risk_levels:
+    - low
+    - medium
+    - high
+    - critical
+  
+  # Confidence scoring factors
+  confidence_factors:
+    response_length: 0.1
+    compliance_status: 0.1
+    risk_level: 0.1
+    recommendations: 0.1
+    base_confidence: 0.6
+
+# Content Validation
+content_validation:
+  # Enable content format validation
+  enabled: true
+  
+  # Allowed characters regex pattern
+  allowed_characters: "^[A-Za-z0-9\\s\\.,;:!?()\\[\\]{}'\"\\-]+$"
+  
+  # Minimum response length
+  min_length: 50
+  
+  # Maximum response length
+  max_length: 2000
+
+# Language Support
+language_support:
+  # Supported languages
+  supported_languages:
+    - en
+    - he
+  
+  # Language-specific patterns
+  hebrew_patterns:
+    compliance:
+      - "ציות"
+      - "לא עומד"
+      - "נדרש ביקורת"
+      - "לא ידוע"
+    risk:
+      - "סיכון נמוך"
+      - "סיכון בינוני"
+      - "סיכון גבוה"
+      - "סיכון קריטי"
+    recommendations:
+      - "המלצה"
+      - "הצעה"
+      - "צריך"
+      - "שקול"
+    professional_terms:
+      - "רגולציה"
+      - "מס"
+      - "סיכון"
+      - "ניתוח"
+
+# Error Handling
+error_handling:
+  # Enable fallback validation when Guardrails fails
+  enable_fallback: true
+  
+  # Log validation errors
+  log_errors: true
+  
+  # Continue processing on validation failure
+  continue_on_failure: true
+
+# Performance Settings
+performance:
+  # Enable caching for validation results
+  enable_caching: true
+  
+  # Cache TTL in seconds
+  cache_ttl: 3600
+  
+  # Maximum concurrent validations
+  max_concurrent: 10
+
+# Monitoring and Logging
+monitoring:
+  # Enable validation metrics
+  enable_metrics: true
+  
+  # Log validation statistics
+  log_stats: true
+  
+  # Performance monitoring
+  performance_monitoring: true

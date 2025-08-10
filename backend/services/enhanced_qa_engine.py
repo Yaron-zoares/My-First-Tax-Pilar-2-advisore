@@ -12,6 +12,7 @@ import asyncio
 from datetime import datetime
 
 from backend.services.qa_engine import QAEngine
+from backend.services.guardrails_service import GuardrailsService
 from config.settings import settings
 
 logger = logging.getLogger(__name__)
@@ -50,6 +51,9 @@ class EnhancedQAEngine(QAEngine):
         
         # Knowledge base
         self.knowledge_base = self._load_knowledge_base()
+        
+        # Initialize Guardrails service
+        self.guardrails_service = GuardrailsService()
     
     def _setup_enhanced_qa_patterns(self) -> Dict[str, Dict]:
         """Setup enhanced QA patterns for advanced question types"""
@@ -125,7 +129,7 @@ class EnhancedQAEngine(QAEngine):
     
     def ask_enhanced_question(self, question: str, language: str = "en") -> Dict[str, Any]:
         """
-        Answer a question using enhanced capabilities with ChatGPT 3.5
+        Answer a question using enhanced capabilities with ChatGPT 3.5 and Guardrails validation
         
         Args:
             question: The question to answer
@@ -138,12 +142,24 @@ class EnhancedQAEngine(QAEngine):
             # First, try basic QA engine
             basic_response = super().ask_question(question, language)
             
+            # Apply Guardrails validation to basic response
+            question_type = self._classify_enhanced_question(question.lower())
+            basic_validation = self.guardrails_service.validate_ai_response(
+                basic_response['answer'], question_type
+            )
+            
+            # Update basic response with validation info
+            basic_response['guardrails_validation'] = {
+                'quality_score': basic_validation.get('quality_score', 0.8),
+                'warnings': basic_validation.get('warnings', []),
+                'improved': basic_validation.get('validation_details', {}).get('improved', False),
+                'compliance_status': basic_validation.get('validation_details', {}).get('compliance_status', 'unknown'),
+                'risk_level': basic_validation.get('validation_details', {}).get('risk_level', 'medium')
+            }
+            
             # Check if we have OpenAI client
             if not self.openai_client:
                 return basic_response
-            
-            # Classify question type
-            question_type = self._classify_enhanced_question(question.lower())
             
             # If it's a complex question, enhance with AI
             if self._is_complex_question(question, question_type):
@@ -154,8 +170,34 @@ class EnhancedQAEngine(QAEngine):
             
         except Exception as e:
             logger.error(f"Enhanced question answering error: {str(e)}")
-            # Fallback to basic response
-            return super().ask_question(question, language)
+            # Fallback to basic response with basic validation
+            try:
+                fallback_response = super().ask_question(question, language)
+                fallback_validation = self.guardrails_service.validate_ai_response(
+                    fallback_response['answer'], 'general'
+                )
+                fallback_response['guardrails_validation'] = {
+                    'quality_score': fallback_validation.get('quality_score', 0.7),
+                    'warnings': fallback_validation.get('warnings', []) + ['Fallback response due to error'],
+                    'improved': False,
+                    'compliance_status': 'unknown',
+                    'risk_level': 'medium'
+                }
+                return fallback_response
+            except Exception as fallback_error:
+                logger.error(f"Fallback error: {str(fallback_error)}")
+                return {
+                    'answer': f"Error: {str(e)}",
+                    'confidence': 0.0,
+                    'source': 'error',
+                    'guardrails_validation': {
+                        'quality_score': 0.0,
+                        'warnings': [f'Critical error: {str(e)}'],
+                        'improved': False,
+                        'compliance_status': 'unknown',
+                        'risk_level': 'critical'
+                    }
+                }
     
     def _classify_enhanced_question(self, question: str) -> str:
         """Classify the type of enhanced question"""
@@ -188,7 +230,7 @@ class EnhancedQAEngine(QAEngine):
         return False
     
     def _enhance_with_ai(self, question: str, basic_response: Dict[str, Any], question_type: str, language: str) -> Dict[str, Any]:
-        """Enhance basic response with AI capabilities"""
+        """Enhance basic response with AI capabilities and Guardrails validation"""
         try:
             # Prepare context
             context = self._prepare_ai_context(question, basic_response, question_type)
@@ -199,12 +241,29 @@ class EnhancedQAEngine(QAEngine):
             # Get AI response
             ai_response = self._get_ai_response(prompt, language)
             
-            # Combine basic and AI responses
+            # Validate AI response using Guardrails
+            validation_result = self.guardrails_service.validate_ai_response(
+                ai_response, question_type
+            )
+            
+            # Use validated response
+            validated_ai_response = validation_result.get('validated_response', ai_response)
+            
+            # Combine basic and validated AI responses
             enhanced_response = basic_response.copy()
-            enhanced_response['answer'] = self._combine_responses(basic_response['answer'], ai_response, language)
+            enhanced_response['answer'] = self._combine_responses(basic_response['answer'], validated_ai_response, language)
             enhanced_response['ai_enhanced'] = True
             enhanced_response['question_type'] = question_type
             enhanced_response['confidence'] = min(basic_response['confidence'] + 0.2, 1.0)  # Boost confidence
+            
+            # Add Guardrails validation information
+            enhanced_response['guardrails_validation'] = {
+                'quality_score': validation_result.get('quality_score', 0.8),
+                'warnings': validation_result.get('warnings', []),
+                'improved': validation_result.get('validation_details', {}).get('improved', False),
+                'compliance_status': validation_result.get('validation_details', {}).get('compliance_status', 'unknown'),
+                'risk_level': validation_result.get('validation_details', {}).get('risk_level', 'medium')
+            }
             
             return enhanced_response
             
@@ -599,3 +658,15 @@ class EnhancedQAEngine(QAEngine):
                 "error": str(e),
                 "message": f"Failed to connect to {test_model}"
             }
+    
+    def get_guardrails_status(self) -> Dict[str, Any]:
+        """Get Guardrails service status and configuration"""
+        return self.guardrails_service.get_validation_stats()
+    
+    def update_guardrails_threshold(self, threshold: float):
+        """Update Guardrails quality threshold"""
+        self.guardrails_service.update_quality_threshold(threshold)
+    
+    def validate_response_manually(self, response: str, question_type: str = "general") -> Dict[str, Any]:
+        """Manually validate a response using Guardrails"""
+        return self.guardrails_service.validate_ai_response(response, question_type)

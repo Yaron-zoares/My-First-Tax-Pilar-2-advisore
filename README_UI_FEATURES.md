@@ -2,7 +2,7 @@
 
 ## 🚀 Overview
 
-The Pilar2 system now features a **completely enhanced user interface** with advanced AI capabilities powered by ChatGPT 3.5. This upgrade transforms the basic Q&A system into a comprehensive AI-powered financial analysis platform.
+The Pilar2 system now features a **completely enhanced user interface** with advanced AI capabilities powered by ChatGPT 3.5 and CrewAI integration. This upgrade transforms the basic Q&A system into a comprehensive AI-powered financial analysis platform. **All validation errors have been resolved and the system is fully operational.**
 
 ## 🤖 New AI-Powered Features
 

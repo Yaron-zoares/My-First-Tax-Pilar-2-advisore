@@ -66,6 +66,10 @@ API_BASE_URL = "http://localhost:8000/api/v1"
 def main():
     """Main application function"""
     
+    # Initialize session state for page navigation
+    if "page" not in st.session_state:
+        st.session_state.page = "🏠 Home"
+    
     # Sidebar navigation
     st.sidebar.title("📊 Pilar2")
     st.sidebar.markdown("---")
@@ -80,23 +84,29 @@ def main():
             "📋 Reports",
             "💡 Recommendations",
             "⚙️ Settings"
-        ]
+        ],
+        key="sidebar_page",
+        index=["🏠 Home", "📁 Upload Files", "📊 Financial Analysis", "❓ Q&A", "📋 Reports", "💡 Recommendations", "⚙️ Settings"].index(st.session_state.page)
     )
     
+    # Update session state when sidebar changes
+    if page != st.session_state.page:
+        st.session_state.page = page
+    
     # Page routing
-    if "Home" in page:
+    if "Home" in st.session_state.page:
         home_page()
-    elif "Upload" in page:
+    elif "Upload" in st.session_state.page:
         upload_page()
-    elif "Analysis" in page:
+    elif "Analysis" in st.session_state.page:
         analysis_page()
-    elif "Q&A" in page:
+    elif "Q&A" in st.session_state.page:
         qa_page()
-    elif "Reports" in page:
+    elif "Reports" in st.session_state.page:
         reports_page()
-    elif "Recommendations" in page:
+    elif "Recommendations" in st.session_state.page:
         recommendations_page()
-    elif "Settings" in page:
+    elif "Settings" in st.session_state.page:
         settings_page()
 
 def home_page():
@@ -163,25 +173,29 @@ def home_page():
         st.markdown("#### 📁 Upload & Process")
         st.markdown("Upload financial reports for AI analysis")
         if st.button("📁 Upload Files", key="upload_btn", use_container_width=True):
-            st.switch_page("pages/upload.py")
+            st.session_state.page = "📁 Upload Files"
+            st.rerun()
     
     with col2:
         st.markdown("#### 🤖 AI Q&A")
         st.markdown("Ask intelligent questions with AI enhancement")
         if st.button("🤖 Ask AI", key="ai_qa_btn", use_container_width=True):
-            st.switch_page("pages/qa.py")
+            st.session_state.page = "❓ Q&A"
+            st.rerun()
     
     with col3:
         st.markdown("#### 📊 Analysis")
         st.markdown("Comprehensive financial analysis")
         if st.button("📊 Analyze", key="analysis_btn", use_container_width=True):
-            st.switch_page("pages/analysis.py")
+            st.session_state.page = "📊 Financial Analysis"
+            st.rerun()
     
     with col4:
         st.markdown("#### ⚙️ Settings")
         st.markdown("Configure AI and system preferences")
         if st.button("⚙️ Configure", key="settings_btn", use_container_width=True):
-            st.switch_page("pages/settings.py")
+            st.session_state.page = "⚙️ Settings"
+            st.rerun()
     
     # System status with AI status
     st.markdown("---")

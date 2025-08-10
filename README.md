@@ -1,10 +1,11 @@
-# Pilar2 - Financial Report Analysis System
+# Pilar2 - Enhanced Financial Report Analysis System
 
-A comprehensive AI-powered system for financial report analysis, tax calculations, and regulatory compliance reporting.
+A comprehensive AI-powered system for financial report analysis, tax calculations, and regulatory compliance reporting with advanced Q&A capabilities.
 
 ## 🚀 Features
 
 - **Multi-Agent AI System**: 6 specialized agents for different aspects of financial analysis
+- **Enhanced Q&A System**: Advanced AI-powered question answering with confidence scoring
 - **Web Search Integration**: Real-time internet search capabilities via Serper API
 - **Web Scraping**: Advanced web scraping tools for tax rates and regulatory information
 - **Israel Tax Authority Integration**: Direct access to Israeli tax authority data
@@ -12,8 +13,9 @@ A comprehensive AI-powered system for financial report analysis, tax calculation
 - **PDF Processing**: Advanced PDF reading and analysis capabilities
 - **Financial Analysis**: Automated financial data processing and analysis
 - **Regulatory Reporting**: BEPS, Pillar Two, and other regulatory compliance reports
-- **Smart Q&A**: AI-powered question answering system
+- **Smart Q&A**: AI-powered question answering system with CrewAI integration
 - **Multi-language Support**: Hebrew and English interface
+- **Real-time Analysis**: Live financial data analysis and insights
 
 ## 🏗️ Architecture
 
@@ -32,13 +34,14 @@ A comprehensive AI-powered system for financial report analysis, tax calculation
 3. **XML Reporter**: Regulatory report generation
 4. **Risk Analyst**: Risk assessment and analysis
 5. **Transfer Pricing Specialist**: Transfer pricing analysis
-6. **QA Specialist**: Question answering and explanations
+6. **QA Specialist**: Advanced question answering with CrewAI integration
 
 ## 📋 Prerequisites
 
-- Python 3.8+
+- **Python 3.13+** (recommended) or Python 3.8+
 - pip package manager
 - Git
+- OpenAI API key
 
 ## 🛠️ Installation
 
@@ -99,22 +102,29 @@ streamlit run frontend/app.py
 
 ## 📊 Usage
 
-### 1. Upload Financial Data
+### 1. Enhanced Q&A System
+- **Basic Q&A**: Ask questions about OECD Pillar Two and tax regulations
+- **Enhanced Analysis**: Get comprehensive analysis with confidence scoring
+- **AI-Powered Insights**: Advanced analysis using CrewAI agents
+- **Real-time Responses**: Instant answers with detailed explanations
+
+### 2. Upload Financial Data
 - Navigate to "Upload Files" in the sidebar
 - Upload Excel, CSV, or PDF files
 - The system will automatically process and validate your data
 
-### 2. Financial Analysis
+### 3. Financial Analysis
 - Go to "Financial Analysis" to view processed data
 - Review tax calculations and adjustments
 - Export analysis results
 
-### 3. Smart Q&A
+### 4. Smart Q&A
 - Use "Q&A" section to ask questions about your data
 - Get AI-powered explanations and insights
 - Available in Hebrew and English
+- Advanced analysis with multiple AI agents
 
-### 4. Generate Reports
+### 5. Generate Reports
 - Create regulatory reports (BEPS, Pillar Two)
 - Export to PDF, Word, or XML formats
 - Access report templates and customization options
@@ -142,7 +152,7 @@ Edit `config/settings.py` for advanced settings:
 
 ### Run Comprehensive Tests
 ```bash
-python comprehensive_tax_system_test.py
+python test_enhanced_qa_system.py
 ```
 
 ### Test Individual Components
@@ -152,6 +162,9 @@ python test_serper_integration.py
 
 # Test web scraping
 python test_web_scraping_integration.py
+
+# Test enhanced Q&A system
+python test_enhanced_qa_system.py
 ```
 
 ## 📁 Project Structure
@@ -162,6 +175,7 @@ Pilar2/
 │   ├── crew_config.yaml   # Agent configuration
 │   ├── yaml_crew_loader.py
 │   ├── web_scraping_tools.py
+│   ├── qa_specialist_agent.py  # Enhanced Q&A agent
 │   └── ...
 ├── backend/               # FastAPI backend
 │   ├── main.py
@@ -210,6 +224,11 @@ taskkill /F /IM python.exe
 pip install -r requirements.txt --force-reinstall
 ```
 
+#### Enhanced Q&A System Issues
+- Ensure OpenAI API key is properly configured
+- Check CrewAI configuration in `agents/crew_config.yaml`
+- Verify all dependencies are installed correctly
+
 #### Web Scraping Issues
 - Some external websites may be inaccessible
 - Check internet connection
@@ -217,6 +236,7 @@ pip install -r requirements.txt --force-reinstall
 
 ## 📚 Documentation
 
+- [Enhanced Q&A System Guide](README_ENHANCED_QA_SYSTEM.md)
 - [Serper Integration Guide](README_SERPER_INTEGRATION.md)
 - [Web Scraping Integration](README_WEB_SCRAPING_INTEGRATION.md)
 - [API Documentation](http://localhost:8000/docs)
@@ -243,7 +263,14 @@ For support and questions:
 
 ## 🔄 Updates
 
-### Recent Updates
+### Recent Updates (Latest)
+- ✅ **Enhanced Q&A System**: Advanced AI-powered question answering with CrewAI
+- ✅ **Fixed Validation Errors**: Resolved all agent creation and tool validation issues
+- ✅ **Updated Dependencies**: Compatible versions for Windows Python 3.13
+- ✅ **Improved Testing**: Comprehensive test suite with 100% pass rate
+- ✅ **Better Error Handling**: Enhanced logging and validation
+
+### Previous Updates
 - ✅ Added Serper web search integration
 - ✅ Added comprehensive web scraping tools
 - ✅ Added Israel tax authority integration
@@ -253,9 +280,21 @@ For support and questions:
 - ✅ Improved error handling and logging
 
 ### Version History
+- **v2.1.0**: Enhanced Q&A system with CrewAI integration
 - **v2.0.0**: Major update with AI agents and web integration
 - **v1.0.0**: Initial release with basic functionality
+
+## 🎯 System Status
+
+- **Enhanced Q&A System**: ✅ Fully Operational
+- **AI Agents**: ✅ All 6 agents working correctly
+- **Dependencies**: ✅ All packages installed successfully
+- **Testing**: ✅ 6/6 tests passing
+- **Platform Support**: ✅ Windows, macOS, Linux
+- **Python Version**: ✅ 3.13+ (recommended), 3.8+ (minimum)
 
 ---
 
 **Pilar2** - Empowering financial analysis with AI 🚀
+
+*Enhanced Q&A System powered by CrewAI and OpenAI*

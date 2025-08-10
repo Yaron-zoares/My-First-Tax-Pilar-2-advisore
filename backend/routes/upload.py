@@ -188,13 +188,26 @@ async def list_uploaded_files():
     """
     try:
         files = []
+        # Get all allowed extensions
+        allowed_extensions = []
+        for extensions in settings.ALLOWED_EXTENSIONS.values():
+            allowed_extensions.extend(extensions)
+        
         for file_path in settings.UPLOAD_DIR.glob("*"):
             if file_path.is_file():
-                files.append({
-                    "filename": file_path.name,
-                    "size": file_path.stat().st_size,
-                    "modified": file_path.stat().st_mtime
-                })
+                # Skip system files and hidden files
+                if file_path.name.startswith('.') or file_path.name in ['.gitkeep', 'Thumbs.db']:
+                    continue
+                
+                # Only include files with supported extensions
+                file_extension = Path(file_path.name).suffix.lower()
+                if file_extension in allowed_extensions:
+                    files.append({
+                        "filename": file_path.name,
+                        "size": file_path.stat().st_size,
+                        "modified": file_path.stat().st_mtime,
+                        "file_type": file_extension
+                    })
         
         return {
             "files": files,
