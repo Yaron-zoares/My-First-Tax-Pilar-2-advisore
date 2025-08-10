@@ -1,0 +1,5 @@
+[33mc972b98[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m  Fix: Remove serper-dev dependency and update documentation - Removed non-existent serper-dev package from all dependency files - Updated requirements.txt, requirements.in, and pyproject.toml - Added explanatory comments about Serper API service usage - Updated all README files with recent fixes information - Fixed 'No matching distribution found for serper-dev' error - All functionality remains fully operational
+[33m1e23d24[m Update all files with unit display and database documentation
+[33m25624df[m Update all files with unit display and database documentation
+[33m9ce8457[m Update README.md with latest features: Guardrails integration, enhanced data validation, and improved error handling
+[33mc3c0743[m Major update: Add comprehensive documentation, enhanced AI agents, testing suite, and configuration files
